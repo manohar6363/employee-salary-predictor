@@ -1,0 +1,17 @@
+<form action="{% url 'predict_salary' %}" method="post">
+    {% csrf_token %}
+    <label>Age:</label><input type="number" name="age"><br>
+    <label>Gender:</label><input type="text" name="gender"><br>
+    <label>Department:</label><input type="text" name="department"><br>
+    <label>Job Title:</label><input type="text" name="job_title"><br>
+    <label>Experience (Years):</label><input type="text" name="experience_years"><br>
+    <label>Education Level:</label><input type="text" name="education_level"><br>
+    <label>Location:</label><input type="text" name="location"><br>
+    <button type="submit">Predict</button>
+</form>
+
+{% if prediction %}
+    <h2>Predicted Salary: ₹{{ prediction }}</h2>
+{% elif error %}
+    <h3 style="color:red;">Error: {{ error }}</h3>
+{% endif %}
