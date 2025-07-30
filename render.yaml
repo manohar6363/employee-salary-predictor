@@ -3,7 +3,7 @@ services:
     name: employee-salary-app
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn employee_salary_project.wsgi
+    startCommand: gunicorn employee_salary_project.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: employee_salary_project.settings
