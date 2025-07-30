@@ -1,8 +1,8 @@
 setuptools>=42
 wheel
 Django==5.2.1
-gunicorn==23.0.0
 scikit-learn==1.6.1
 cloudpickle==3.1.1
 pandas==2.2.3
 numpy==1.23.5
+gunicorn==23.0.0
